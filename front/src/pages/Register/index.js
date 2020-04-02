@@ -2,7 +2,7 @@ import * as React from "react";
 import "./styles.css";
 import logoImg from "../../assets/logo.svg";
 import { FiArrowLeft } from "react-icons/fi";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import api from "../../services/api";
 
 export default function Register() {
@@ -12,6 +12,7 @@ export default function Register() {
   const [city, setCity] = React.useState("");
   const [uf, setUf] = React.useState("");
 
+  const history = useHistory();
   async function handleRegister(e) {
     e.preventDefault();
     const data = {
@@ -25,6 +26,8 @@ export default function Register() {
     try {
       const response = await api.post("ongs", data);
       alert(`Seu ID de acesso: ${response.data.id}`);
+
+      history.push("/");
     } catch (error) {
       alert("erro no cadastro, tente novamente");
     }
