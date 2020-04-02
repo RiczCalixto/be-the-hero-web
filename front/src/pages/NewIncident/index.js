@@ -4,7 +4,7 @@ import logoImg from "../../assets/logo.svg";
 import { FiArrowLeft } from "react-icons/fi";
 import { Link } from "react-router-dom";
 
-export default function Register() {
+export default function NewIncident() {
   return (
     <div className="register-container">
       <div className="content">
