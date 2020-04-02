@@ -6,30 +6,25 @@ import { Link } from "react-router-dom";
 
 export default function NewIncident() {
   return (
-    <div className="register-container">
+    <div className="incident-container">
       <div className="content">
         <section>
           <img src={logoImg} alt="Be The Hero" />
 
-          <h1>Cadastro</h1>
+          <h1>Cadastrar novo incidente</h1>
           <p>
-            Faça seu cadastro, entre na plataforma e ajude pessoas a encontrar
-            os casos da sua ONG.
+            Detalhe o ocorrido para dar informações ao Herói que irá te ajudar!
           </p>
           <Link className="back-link" to="/">
             <FiArrowLeft size={16} color="#E02041" />
-            Já tenho cadastro
+            Voltar para home
           </Link>
         </section>
 
         <form>
-          <input placeholder="Nome da ONG" />
-          <input type="email" placeholder="E-mail" />
-          <input placeholder="Whatsapp" />
-          <div className="input-group">
-            <input placeholder="Cidade" />
-            <input placeholder="UF" style={{ width: 80 }} />
-          </div>
+          <input placeholder="Título" />
+          <textarea placeholder="Descrição" />
+          <input placeholder="Valor (apenas o número)" />
           <button className="button" type="button">
             Cadastrar
           </button>
